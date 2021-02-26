@@ -28,7 +28,7 @@ const startApp = async () => {
     console.log('filesPath', filesPath)
 
     if (!fs.existsSync(filesPath)) {
-      fs.mkdirSync(path.resolve(filesPath, 'files'))
+      fs.mkdirSync(path.resolve(filesPath))
     }
 
     await mongoose
