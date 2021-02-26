@@ -1,0 +1,7 @@
+{
+  "serverPORT": 5000,
+  "dbURL": "mongodb+srv://algoritm211:aeg0806aeg@cluster0.udmsc.mongodb.net/mern-app?retryWrites=true&w=majority",
+  "secretKey": "mern-app",
+  "rootFilesDir": "/Users/alexey_horbunov/Documents/mern-app/server/files",
+  "staticDir": "/Users/alexey_horbunov/Documents/mern-app/server/static"
+}
