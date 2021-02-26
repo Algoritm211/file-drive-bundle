@@ -7,6 +7,7 @@ const fileRouter = require('./routes/file.routes')
 const cors = require('cors');
 const path = require('path')
 const fileMiddleware = require("./middlewares/files.middleware");
+const fs = require("fs");
 
 const app = express()
 const PORT = process.env.PORT || config.get('serverPORT')
@@ -22,6 +23,13 @@ app.use('/api/files/', fileRouter)
 
 const startApp = async () => {
   try {
+
+    const filesPath = path.resolve(__dirname, 'files')
+    console.log('filesPath', filesPath)
+
+    if (!fs.existsSync(filesPath)) {
+      fs.mkdirSync(path.resolve(filesPath, 'files'))
+    }
 
     await mongoose
       .connect( dbURL, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true, useFindAndModify: false, tls: true })
