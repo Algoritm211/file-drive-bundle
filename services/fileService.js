@@ -7,6 +7,7 @@ class FileService {
 
   createDir(request, file) {
     const filePath = `${request.filePath}/${file.user}/${file.path}`
+    console.log(filePath)
 
     return new Promise((resolve, reject) => {
 
