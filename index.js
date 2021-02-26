@@ -13,8 +13,15 @@ const app = express()
 const PORT = process.env.PORT || config.get('serverPORT')
 const dbURL = config.get('dbURL')
 
+const corsOptions = {
+  origin: 'https://react-mern-c-lient.herokuapp.com',
+  optionsSuccessStatus: 200
+}
+
+
 app.use(fileUpload({}))
-app.use(cors());
+app.use(cors(corsOptions));
+app.options('*', cors());
 app.use(fileMiddleware(path.resolve(__dirname, 'files')))
 app.use(express.static('static'))
 app.use(express.json())
