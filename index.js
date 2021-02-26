@@ -13,7 +13,7 @@ const PORT = process.env.PORT || config.get('serverPORT')
 const dbURL = config.get('dbURL')
 
 app.use(fileUpload({}))
-// app.use(cors());
+app.use(cors());
 app.use(fileMiddleware(path.resolve(__dirname, 'files')))
 app.use(express.static('static'))
 app.use(express.json())
