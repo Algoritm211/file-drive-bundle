@@ -19,9 +19,10 @@ const corsOptions = {
 }
 
 
-app.use(fileUpload({}))
 app.use(cors(corsOptions));
 app.options('*', cors());
+
+app.use(fileUpload({}))
 app.use(fileMiddleware(path.resolve(__dirname, 'files')))
 app.use(express.static('static'))
 app.use(express.json())
