@@ -19,8 +19,8 @@ const corsOptions = {
 }
 
 
-app.use(cors(corsOptions));
-app.options('*', cors());
+app.use(cors({credentials: true, origin: true}));
+// app.options('*', cors());
 
 app.use(fileUpload({}))
 app.use(fileMiddleware(path.resolve(__dirname, 'files')))
